@@ -1,16 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
+import html2canvas from 'html2canvas';
 import { synthesizeBriefing } from './utils/synthesizer';
 import type { ColleagueProfile } from './utils/synthesizer';
-import {
-  Share2,
-  ChevronDown,
-  Check,
-  Copy,
-  Mail,
-  MessageSquare,
-  FileText,
-  PlayCircle
-} from 'lucide-react';
+import { PlayCircle, ExternalLink, Camera } from 'lucide-react';
 
 const ROLE_OPTIONS = [
   'Management Level',
@@ -33,40 +25,33 @@ export default function App() {
     format: 'summary',
   });
 
-  const [showExportModal, setShowExportModal] = useState(false);
-  const [exportTab, setExportTab] = useState<'slack' | 'email' | 'markdown'>('slack');
-  const [copied, setCopied] = useState(false);
+  const [savingPhoto, setSavingPhoto] = useState(false);
+  const captureRef = useRef<HTMLDivElement>(null);
 
   const briefing = useMemo(() => synthesizeBriefing(profile), [profile]);
 
   const displayName = profile.name.trim() || 'You';
 
-  const handleCopyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+  const handleSavePhoto = async () => {
+    if (!captureRef.current) return;
+    setSavingPhoto(true);
+    try {
+      const canvas = await html2canvas(captureRef.current, {
+        backgroundColor: '#ffffff',
+        scale: 2,
+        useCORS: true,
+        width: 390,
+        windowWidth: 390,
+      });
+      const dataUrl = canvas.toDataURL('image/png');
+      const link = document.createElement('a');
+      link.download = `aic2026-takeaways-${(profile.name || 'briefing').toLowerCase().replace(/\s+/g, '-')}.png`;
+      link.href = dataUrl;
+      link.click();
+    } finally {
+      setSavingPhoto(false);
+    }
   };
-
-  const markdownText = `# Personal Takeaways: UBS Asia Investment Conference (AIC) 2026
-
-* **Prepared For:** ${displayName}
-* **Role:** ${profile.role}
-
----
-
-## Overview
-${briefing.intro}
-
-## Recommended Replay
-* **Session:** ${briefing.replayRecommendation.title}
-* **Speakers:** ${briefing.replayRecommendation.speakers}
-* **Why watch:** ${briefing.replayRecommendation.reason}
-
-## Key Takeaways
-${briefing.topTakeaways.map((tk, i) => `\n### 0${i + 1}. ${tk.title}\n${tk.desc}\n**How it improves your work:** ${tk.improvement}`).join('\n')}
-
----
-*Synthesized from UBS AIC 2026 conference proceedings.*`;
 
   return (
     <div className="app-container">
@@ -119,7 +104,7 @@ ${briefing.topTakeaways.map((tk, i) => `\n### 0${i + 1}. ${tk.title}\n${tk.desc}
       </aside>
 
       {/* Main */}
-      <main className="main-dashboard">
+      <main className="main-dashboard" ref={captureRef}>
         <header className="dashboard-header">
           <div>
             <div className="header-eyebrow">UBS AIC 2026 — Tailored Briefing</div>
@@ -129,13 +114,9 @@ ${briefing.topTakeaways.map((tk, i) => `\n### 0${i + 1}. ${tk.title}\n${tk.desc}
             </p>
           </div>
           <div className="header-actions">
-            <button onClick={() => window.print()} className="btn-secondary" title="Print or save as PDF">
-              <FileText size={15} />
-              Print PDF
-            </button>
-            <button onClick={() => setShowExportModal(true)} className="btn-primary">
-              <Share2 size={15} />
-              Share
+            <button onClick={handleSavePhoto} className="btn-primary" title="Save as image" disabled={savingPhoto}>
+              <Camera size={15} />
+              {savingPhoto ? 'Saving…' : 'Save Photo'}
             </button>
           </div>
         </header>
@@ -149,8 +130,24 @@ ${briefing.topTakeaways.map((tk, i) => `\n### 0${i + 1}. ${tk.title}\n${tk.desc}
             <PlayCircle size={14} />
             Recommended Replay to Watch
           </div>
-          <div className="replay-title">{briefing.replayRecommendation.title}</div>
-          <div className="replay-speakers">Speakers: {briefing.replayRecommendation.speakers}</div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap' }}>
+            <div>
+              <div className="replay-title">{briefing.replayRecommendation.title}</div>
+              <div className="replay-speakers">Speakers: {briefing.replayRecommendation.speakers}</div>
+            </div>
+            {briefing.replayRecommendation.url && (
+              <a
+                href={briefing.replayRecommendation.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ textDecoration: 'none', flexShrink: 0 }}
+              >
+                <ExternalLink size={14} />
+                Watch Replay
+              </a>
+            )}
+          </div>
           <div className="replay-reason">
             <strong>Why watch: </strong>{briefing.replayRecommendation.reason}
           </div>
@@ -167,7 +164,7 @@ ${briefing.topTakeaways.map((tk, i) => `\n### 0${i + 1}. ${tk.title}\n${tk.desc}
                 <p className="takeaway-desc">{takeaway.desc}</p>
                 {takeaway.improvement && (
                   <div className="takeaway-improvement">
-                    <strong>How it improves your work: </strong>{takeaway.improvement}
+                    <strong>What to think about next: </strong>{takeaway.improvement}
                   </div>
                 )}
               </div>
@@ -175,75 +172,6 @@ ${briefing.topTakeaways.map((tk, i) => `\n### 0${i + 1}. ${tk.title}\n${tk.desc}
           </div>
         </div>
       </main>
-
-      {/* Export Modal */}
-      {showExportModal && (
-        <div className="modal-overlay" onClick={() => setShowExportModal(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h3 className="modal-title">Share Takeaways for {displayName}</h3>
-              <button className="btn-close" onClick={() => setShowExportModal(false)}>
-                <ChevronDown size={20} style={{ transform: 'rotate(90deg)' }} />
-              </button>
-            </div>
-
-            <div className="modal-body">
-              <div className="export-tabs">
-                <button className={`export-tab-btn ${exportTab === 'slack' ? 'active' : ''}`} onClick={() => setExportTab('slack')}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <MessageSquare size={13} /> Slack / Teams
-                  </span>
-                </button>
-                <button className={`export-tab-btn ${exportTab === 'email' ? 'active' : ''}`} onClick={() => setExportTab('email')}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <Mail size={13} /> Email
-                  </span>
-                </button>
-                <button className={`export-tab-btn ${exportTab === 'markdown' ? 'active' : ''}`} onClick={() => setExportTab('markdown')}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <FileText size={13} /> Markdown
-                  </span>
-                </button>
-              </div>
-
-              {exportTab === 'slack' && (
-                <>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Pre-formatted for Slack or Microsoft Teams.</p>
-                  <div className="preview-container">{briefing.slackCopyText}</div>
-                </>
-              )}
-              {exportTab === 'email' && (
-                <>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Visual HTML email preview. Copy HTML to send via Outlook.</p>
-                  <div className="preview-container rich-preview" dangerouslySetInnerHTML={{ __html: briefing.emailHtml }} />
-                </>
-              )}
-              {exportTab === 'markdown' && (
-                <>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Raw markdown for Notion, Confluence, or wikis.</p>
-                  <div className="preview-container">{markdownText}</div>
-                </>
-              )}
-            </div>
-
-            <div className="modal-footer">
-              <button className="btn-secondary" onClick={() => setShowExportModal(false)}>Cancel</button>
-              <button
-                className="btn-primary"
-                onClick={() => {
-                  const text = exportTab === 'slack' ? briefing.slackCopyText
-                    : exportTab === 'email' ? briefing.emailHtml
-                    : markdownText;
-                  handleCopyToClipboard(text);
-                }}
-              >
-                {copied ? <Check size={15} /> : <Copy size={15} />}
-                {copied ? 'Copied!' : 'Copy to Clipboard'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

@@ -21,37 +21,37 @@ export const sessions: Session[] = [
     category: 'tech-ai',
     tags: ['ai', 'automation', 'labor', 'growth', 'regulation', 'politics'],
     bullets: [
+      { text: 'AI will increase productivity across the economy, but gains are distributed unevenly.' },
+      { text: 'Current economic regime is not good for all people — a few knowledgeable people gain disproportionately while others get poorer, which is socially unsustainable.' },
+      { text: 'Tax increases to redistribute AI-driven wealth are likely needed to avoid political instability.' },
+      { text: 'Kevin Rudd: Superannuation-style funds are a model for distributing economic gains broadly — everyone gets an economic share.' },
       { text: 'Direct Automation: Machines are increasingly substituting human labor, leading to significant workforce restructuring.' },
-      { text: 'AI is pushing out the new frontier of innovation, accelerating the pace of discoveries compared to previous technology waves.' },
       { text: 'Labor Market Polarization: High-skilled expertise is capturing most of the economic gains, while middle-to-low-tier jobs face stagnation and replacement.' },
-      { text: 'The Fourth Industrial Revolution is unfolding at a faster rate than the previous three, shortening the timeline for social adaptation.' },
+      { text: 'The Fourth Industrial Revolution is unfolding faster than previous ones, shortening the timeline for social adaptation.' },
       { text: 'Political polarization on both the far right and far left is a lagging indicator of these rapid economic and social shifts.' },
       { text: 'Strong public-private collaborations are necessary to create a "soft landing" for labor policies and social safety nets.' },
-      { text: 'Over 60% of current job tasks did not exist in 1940, illustrating massive creative destruction and shifts in expertise.' },
-      { text: 'New sectors and tasks are increasing the demand for specialized expertise, pushing the productivity frontier.' },
-      { text: 'Key Policy Question: Can AI be designed to be worker-friendly and augment human capacity rather than replace it?' },
-      { text: 'Governments need to get ahead of the technology curve by actively working with true technical experts.' },
-      { text: 'The AI transition is a "slow burn" structural shift, unlike the sudden, single-event shock of the 2008 financial crisis.' },
-      { text: 'Public anxiety and narrative-driven fears are likely to accelerate AI safety and ethics legislation.' },
-      { text: 'The policy risk of the "Innovation Dividend" (MIT): Private companies capture the upside of productivity gains, while society bears the downside of labor displacement.' }
+      { text: 'Key Policy Question: Can AI be designed to augment human capacity rather than replace it?' },
+      { text: 'The policy risk of the "Innovation Dividend": Private companies capture the upside of productivity gains, while society bears the downside of labor displacement.' }
     ]
   },
   {
     id: 'd1-monetary-policy',
     day: 1,
-    title: 'What’s Next for Monetary Policy?',
+    title: "What's Next for Monetary Policy?",
     speakers: ['Adrian Orr', 'Charles Evans'],
     category: 'macro-monetary',
-    tags: ['monetary-policy', 'inflation', 'usa', 'macroeconomics', 'central-banks'],
+    tags: ['monetary-policy', 'inflation', 'usa', 'macroeconomics', 'central-banks', 'fed'],
     bullets: [
-      { text: 'US Supply-Side Shifts: Structural changes in the US supply chain are impacting global macroeconomic dynamics.' },
-      { text: 'The economic and geopolitical power imbalance remains heavily skewed in favor of the US relative to the rest of the world.' },
+      { text: 'US has had strong economic growth, but this has not translated evenly into public confidence.' },
+      { text: 'Lack of trust in corporations is a structural headwind for policy transmission.' },
+      { text: 'US inflation has been above 2% for 5+ years — people feel it in daily life, eroding political support for the Fed.' },
+      { text: 'Kevin Warsh may face a difficult early period as Fed Chair given his prior public criticism of the institution — credibility re-establishment will be key.' },
+      { text: 'The Fed must maintain credibility above all else; its effectiveness depends on belief in its commitment.' },
+      { text: 'US policy uncertainty is directly increasing the risk premium demanded on long-term US Treasuries.' },
+      { text: 'US Supply-Side Shifts: Structural changes in the supply chain are impacting global macroeconomic dynamics.' },
       { text: 'Central banks are re-evaluating whether they should "look through" temporary supply-side shocks, risking their credibility.' },
-      { text: 'US inflation has consistently run above the target for 6 years, suggesting that a higher baseline inflation rate is here to stay.' },
-      { text: 'Focus is shifting to central bank credibility vs. the real economy\'s actual capacity to absorb persistent inflation.' },
-      { text: 'The monetary framework has shifted post-Kevin Warsh: introducing new inflation target frameworks and criticizing institutional groupthink.' },
-      { text: 'Transition to this new monetary regime is likely to be highly disruptive for global capital markets.' },
-      { text: 'Clear forward guidance is necessary to bridge the timeline gap between central bank policy actions and real-world outcomes.' },
+      { text: 'Transition to a new monetary regime is likely to be highly disruptive for global capital markets.' },
+      { text: 'Clear forward guidance is necessary to bridge the gap between policy actions and real-world outcomes.' },
       { text: 'Inflation targeting must focus on its core mission: stabilizing the purchasing power and value of money.' }
     ]
   },
@@ -59,15 +59,19 @@ export const sessions: Session[] = [
     id: 'd1-geopolitics',
     day: 1,
     title: 'Geopolitics: Who Holds the Cards?',
-    speakers: ['Max (Speaker)', 'Dr. Ng (Speaker)'],
     category: 'geopolitics-energy',
-    tags: ['geopolitics', 'china', 'europe', 'us-policy', 'trade'],
+    tags: ['geopolitics', 'china', 'europe', 'us-policy', 'trade', 'trump'],
     bullets: [
+      { text: 'Trump is unpredictable — markets and allies must build in higher geopolitical risk premiums.' },
+      { text: 'Trump will try to win mid-term elections by any means — expect policy populism to intensify.' },
+      { text: 'Europe is hedging by building better relationships with China to reduce dependence on the US.' },
+      { text: 'US nationalism policy is structural, not temporary — Trump is a symptom, not a cause; it will likely survive him.' },
+      { text: 'People are moving more right in the TikTok era — algorithmic media is accelerating political polarization globally.' },
+      { text: 'A Hormuz toll by Iran is hard to execute — too many countries with high stakes in open passage would retaliate.' },
+      { text: 'Resource independence (energy, minerals) is now a critical national security priority for all major powers.' },
       { text: 'Debate over whether Trump-era tariff and isolationist policies will reverse under future administrations.' },
-      { text: 'Geopolitical Cycle View (Max): Friction and stability move in cyclical waves, suggesting eventual normalization.' },
-      { text: 'Geopolitical Structural View (Dr. Ng): The shift is permanent. The world is staying multi-polar with two stable leading blocks: the US/Europe and China.' },
-      { text: 'Europe remains structurally trapped, caught in the friction between the US and China.' },
-      { text: 'The new world order is organized into distinct, localized trading blocks.' }
+      { text: 'Geopolitical Structural View: The shift to multipolarity is permanent — two stable leading blocs: US/Europe and China.' },
+      { text: 'Europe remains structurally trapped, caught in the friction between the US and China.' }
     ]
   },
   {
@@ -76,71 +80,224 @@ export const sessions: Session[] = [
     title: 'Middle East Risk and the Future of Energy',
     speakers: ['Meghan O\'Sullivan'],
     category: 'geopolitics-energy',
-    tags: ['energy', 'oil', 'nuclear', 'middle-east', 'geopolitics'],
+    tags: ['energy', 'oil', 'nuclear', 'middle-east', 'geopolitics', 'iran', 'opec'],
     bullets: [
-      { text: 'Geopolitical Posturing: Neither side in the Middle East has a rational interest in full-scale escalatory conflict.' },
-      { text: 'The Strait of Hormuz is the primary leverage point. Iran recognizes that managing access here is far more effective than a nuclear deterrent.' },
-      { text: 'Short-to-medium-term regime change in Iran is highly unlikely.' },
-      { text: 'US Energy Independence: The US is now a net exporter of oil, making it less vulnerable to local shocks, though allies remain exposed while US influence declines.' },
-      { text: 'Gulf States remain the dominant players in oil due to their status as the lowest-cost producers.' },
-      { text: 'OPEC is structurally stable; other member nations lack incentives to leave since they cannot increase production capacity anyway.' },
-      { text: 'The nuclear energy outlook is extremely positive for the next 5-10 years, driven primarily by energy resilience and national security.' },
+      { text: 'Geopolitics is hard to predict — the US was wrong to expect a quick outcome in Iraq, and appears wrong about a quick win against Iran.' },
+      { text: 'Current Iranian regime looks likely to survive despite pressure.' },
+      { text: 'Middle East may be less prosperous than pre-Iran-war era.' },
+      { text: 'Middle East countries will lean less on the US and build relationships with China as a hedge.' },
+      { text: 'Fossil fuel is still very critical — 80% of energy consumption. Oil consumption grows every year and has never declined.' },
+      { text: 'Energy transition is accelerating in parallel with continued fossil fuel dependence — both trends are real.' },
+      { text: 'US can be geopolitically aggressive due to its energy independence — less constrained by supply vulnerability.' },
+      { text: 'OPEC is not dead as long as Saudi Arabia remains in it — no member can increase production enough to leave.' },
+      { text: 'Geoengineering is probably needed as a tool to fight climate change alongside conventional transitions.' },
+      { text: 'Nuclear energy is likely needed to meet both climate and energy security goals.' },
+      { text: 'Clean energy needs Chinese rare earth materials — Europe is in a very difficult position, depending on the US for oil and China for renewables.' },
+      { text: 'The Strait of Hormuz remains the primary global energy leverage point.' },
       { text: 'Technology advancements in Small Modular Reactors (SMRs) are approaching commercial viability.' },
-      { text: 'Europe is actively rethinking nuclear energy, forced to choose between nuclear, green alternatives, or paying a high premium on traditional energy.' }
+      { text: 'The nuclear energy outlook is extremely positive for the next 5-10 years, driven primarily by energy resilience and national security.' }
     ]
   },
   {
     id: 'd1-space-frontier',
     day: 1,
-    title: 'Space: The Final Frontier',
+    title: 'Space: The Economic Frontier',
     speakers: ['Dame Dr. Maggie Aderin-Pocock'],
     category: 'tech-ai',
     tags: ['space', 'satellite', 'china', 'defense', 'infrastructure'],
     bullets: [
       { text: 'Massive Cost Compression: The cost of launching satellites has plummeted by 90% over the last decade.' },
-      { text: 'Launch success rates have reached historic highs.' },
       { text: 'China is rapidly rising as a dominant satellite launch competitor.' },
       { text: 'Recent launches are heavily dominated by SpaceX\'s Starlink mega-constellation.' },
-      { text: 'AI is unlocking value in space data, e.g., using AI on high-frequency satellite images to track micro-plastics by analyzing changing wave forms.' },
+      { text: 'AI is unlocking value in space data — e.g., using AI on high-frequency satellite images to track micro-plastics by analyzing wave forms.' },
       { text: 'Geopolitical friction is heating up satellite competition; nations refuse to rely on single-country services.' },
-      { text: 'The Three Eras of Space: Confrontation (1957-1975), Collaboration (1975-2010s led by governments), and Commercialization (2010s-present led by private capital).' },
-      { text: 'Orbits definition: Low Earth Orbit (LEO: 160-2,000 km, observation/Starlink), Medium Earth Orbit (MEO: 2,000-35,500 km, GPS), and High/Geostationary Orbit (GEO: >35,000 km, critical communications).' },
-      { text: 'The Space Infrastructure Stack: Launch systems (getting smaller alongside smaller satellites), Satellites, Ground stations, and support systems.' },
-      { text: 'Economic Stack opportunities: Launch vehicles, Satellites, Ground infra, Data analytics (climate, maritime, agriculture), Broadband/Defense, and Future frontier (lunar infrastructure, moon polar hydrogen resource extraction).' },
+      { text: 'Economic Stack opportunities: Launch vehicles, Satellites, Ground infra, Data analytics (climate, maritime, agriculture), Broadband/Defense, and Future frontier (lunar infrastructure).' },
       { text: 'Governance vacuum: No solid international legal framework is currently in place. The Moon will serve as the first test case.' },
-      { text: 'Future governance designs: Safe zones, non-interference boundaries, and resource sharing agreements.' },
       { text: 'Space-based data centers represent a highly interesting emerging sub-sector.' }
     ]
   },
   {
     id: 'd1-global-capital',
     day: 1,
-    title: 'Global Capital at Inflection Point',
+    title: 'Global Capital at an Inflection Point',
     category: 'finance-investing',
-    tags: ['investing', 'capital-markets', 'dollar', 'defense', 'education'],
+    tags: ['investing', 'capital-markets', 'dollar', 'philanthropy', 'gp-selection'],
     bullets: [
-      { text: 'US Politics: Mid-term elections typically result in the ruling party losing congressional control.' },
-      { text: 'De-dollarization: Reserve currency dominance goes in cycles (e.g., historical British Pound decline due to over-borrowing). Trump favors a weaker dollar for export competitiveness, but US must preserve its capability to borrow at reasonable interest rates.' },
-      { text: 'Societal AI Concerns: Core issues involve potential threats to humanity, labor disruption, educational system misalignment, and impact on youth development.' },
-      { text: 'Defense dynamics: Modern defense technology (e.g., Ukraine vs. Russia) is prolonging conflicts rather than ending them quickly.' },
-      { text: 'SpaceX holds a unique, highly centralized position. Driven by Elon Musk, it makes significant revenue from satellites and risks becoming a space monopoly.' },
-      { text: 'GP Selection Rules: Invest with general partners (GPs) who have a proven track record, fair fee structures, a long enough career horizon to stay with the firm, and realistic return expectations.' },
-      { text: 'Career Advice: Obtain the best education possible, but focus heavily on learning how to communicate and persuade effectively.' }
+      { text: 'You can miss many investment opportunities and still perform really well — discipline and process matter more than catching every move.' },
+      { text: 'At end of life, you will not care much about your wealth — you will care about what you contributed to the world and people.' },
+      { text: 'Be philanthropic — wealth is a tool, not a score.' },
+      { text: 'Investing is more about capital preservation than maximisation — have reasonable return expectations, stay diversified, and pick people with track record and integrity.' },
+      { text: 'GP Selection Rules: Invest with general partners who have a proven track record, fair fee structures, a long career horizon, and realistic return expectations.' },
+      { text: 'Career Advice: Obtain the best education possible, but focus heavily on learning how to communicate and persuade effectively.' },
+      { text: 'De-dollarization: Reserve currency dominance goes in cycles — Trump favors a weaker dollar for export competitiveness, but the US must preserve its ability to borrow at reasonable rates.' },
+      { text: 'Defense dynamics: Modern defense technology is prolonging conflicts rather than ending them quickly (e.g., Ukraine vs. Russia).' }
     ]
   },
   {
     id: 'd1-memory-semis',
     day: 1,
-    title: 'Memory Semis',
+    title: 'Memory Semiconductors',
     category: 'semiconductors',
     tags: ['semiconductors', 'memory', 'hbm', 'hardware', 'ai-infrastructure'],
     bullets: [
-      { text: 'Hardware requirement: Higher bandwidth needs denser connections and 3D chip stacking.' },
       { text: 'Bandwidth has become the critical performance bottleneck in AI training.' },
       { text: 'High Bandwidth Memory (HBM) is established as a permanent industry fixture.' },
       { text: 'Agentic AI is driving substantial demand for CPU processing power.' },
-      { text: 'KV Cache bottleneck: Memory context for LLMs is expanding beyond HBM limits, forcing a architectural migration of context data to NAND flash.' },
-      { text: 'Sector constraint: The primary bottleneck is human capital, specifically specialized mechanical engineering talent.' }
+      { text: 'KV Cache bottleneck: Memory context for LLMs is expanding beyond HBM limits, forcing a migration of context data to NAND flash.' },
+      { text: 'Hardware requirement: Higher bandwidth needs denser connections and 3D chip stacking.' },
+      { text: 'Sector constraint: The primary bottleneck is human capital — specifically specialized mechanical engineering talent.' }
+    ]
+  },
+  {
+    id: 'd1-growth-illusion',
+    day: 1,
+    title: 'Growth Without Illusion: Africa & Emerging Demographics',
+    category: 'macro-monetary',
+    tags: ['africa', 'demographics', 'emerging-markets', 'china', 'robots', 'population'],
+    bullets: [
+      { text: 'Africa has very low population density relative to land area but is growing quickly — a future labor and consumption story.' },
+      { text: 'Multi-ethnicity is a governance challenge — Asian countries are more ethnically homogenous; African ethnic leaders need to cooperate for political stability.' },
+      { text: 'African labor is currently cheaper than robots — manufacturing migration window is open but may be short.' },
+      { text: 'China is investing heavily in Africa but not buying African goods — a one-directional capital relationship.' },
+      { text: 'Indians are influential in many African countries — a significant but underappreciated soft power factor.' },
+      { text: 'Politics is very critical in developing countries — political risk often overrides economic fundamentals.' },
+      { text: 'Africa has enormous natural resources, which risks creating oligarch-run economies rather than broad-based growth.' },
+      { text: 'Asian population is decreasing — robotics is becoming structurally essential to sustain productivity.' },
+      { text: 'China is still moving in the right direction despite headwinds — long-term trajectory remains constructive.' }
+    ]
+  },
+  {
+    id: 'd2-econ-bigpicture',
+    day: 2,
+    title: 'Economic Big Picture',
+    category: 'macro-monetary',
+    tags: ['macro', 'oil', 'ai', 'labor', 'inequality', 'uncertainty', 'tax'],
+    bullets: [
+      { text: 'Oil inventory is running down — if Hormuz does not reopen quickly, oil prices will spike sharply.' },
+      { text: 'Uncertainty is very high; forecast confidence is low across all major macro variables.' },
+      { text: 'Markets are driven by tech — the rest of the economy is not growing much.' },
+      { text: 'AI investment is contributing ~1% to GDP growth. The wealth effect from AI stock gains is also supporting consumption.' },
+      { text: 'Wealthy people are doing well from markets; others are doing poorly — inequality is widening.' },
+      { text: 'Healthcare is the only sector that is still meaningfully hiring.' },
+      { text: '25% of layoffs now cite AI as a contributing factor.' },
+      { text: 'Europe is too complacent ("too chill") about its structural economic position.' },
+      { text: 'Mag7 accounts for approximately 60% of total S&P 500 capex.' },
+      { text: 'AI implementation is actually slower than companies expected — adoption curves are lagging executive hype.' },
+      { text: 'The US should be able to generate enough electricity for data center demand — power is not the binding constraint.' },
+      { text: '50% of government revenue is income-related tax — if AI replaces human workers, the tax system will need a fundamental redesign.' }
+    ]
+  },
+  {
+    id: 'd2-equity-strategy',
+    day: 2,
+    title: 'Equity Strategy Outlook',
+    category: 'finance-investing',
+    tags: ['equities', 'ai-bubble', 'us-equities', 'china', 'europe', 'healthcare'],
+    bullets: [
+      { text: 'AI will end in a bubble — markets are hot now but not yet at crazy valuations.' },
+      { text: 'US is very resilient — investors should not underestimate the structural strength of US equities.' },
+      { text: 'Tech can go up further — EPS growth remains high and supports current valuations.' },
+      { text: 'China has fiscal and monetary flexibility, no inflation problem, and investor positioning is very light — significant upside potential.' },
+      { text: 'Europe is bottom ranked — most affected by Iran war, low tech exposure, and faces possible rate hikes.' },
+      { text: 'Healthcare is cheap relative to fundamentals — a contrarian opportunity.' }
+    ]
+  },
+  {
+    id: 'd2-craft-sport',
+    day: 2,
+    title: 'The Craft of Sport: Leadership and Performance',
+    category: 'finance-investing',
+    tags: ['leadership', 'mindset', 'performance', 'coaching', 'resilience'],
+    bullets: [
+      { text: 'Accept failure as a prerequisite for growth — avoiding failure means avoiding learning.' },
+      { text: 'Adjust yourself to bring out the strength in others — leadership is about enabling everyone to win.' },
+      { text: 'Be coachable — staying open to learning is the most durable competitive advantage.' },
+      { text: 'Ego is okay, but only when aligned with a shared team goal rather than personal score-keeping.' }
+    ]
+  },
+  {
+    id: 'd2-ai-infra',
+    day: 2,
+    title: 'AI Monetisation vs. Capex: Scaling the Next Generation',
+    speakers: ['Lucy Guo', 'Lila Tretikov'],
+    category: 'tech-ai',
+    tags: ['ai', 'capex', 'monetisation', 'anthropic', 'microsoft', 'china', 'agents'],
+    bullets: [
+      { text: 'Microsoft believes AI adoption is faster than expected — AI agents are the key driver of enterprise uptake.' },
+      { text: 'Fierce competition is making everything in AI move much quicker — a race with no clear finish line.' },
+      { text: 'Developers will choose a $20,000 token budget over hiring a $200,000 junior employee — the economic case is clear.' },
+      { text: 'Token costs are getting cheaper quickly, accelerated by Chinese competition on model efficiency.' },
+      { text: 'Anthropic ARR is approximately $50bn USD.' },
+      { text: 'Anthropic\'s strength is its focus on enterprise and safety — not consumer gimmicks.' },
+      { text: 'Codex performance has been better than Claude Code for some time, but clients are still sticky — switching costs are real.' },
+      { text: 'China is innovating quickly — already a leader in physical AI, with much better cost efficiency than US counterparts.' },
+      { text: 'Hyperscalers are investing in AI at less than 100% of cash flow — the spending is sustainable at current levels.' }
+    ]
+  },
+  {
+    id: 'd2-wave-intelligence',
+    day: 2,
+    title: 'The Next Wave of Intelligence',
+    category: 'tech-ai',
+    tags: ['ai', 'china', 'efficiency', 'llm', 'multimodal', 'agents'],
+    bullets: [
+      { text: 'All models are competing aggressively — a single misstep can be enough to fail the company.' },
+      { text: 'AI is still not good in some specialised verticals — domain-specific gaps remain significant.' },
+      { text: 'Cost is critical for agents too — since agents run 24/7, inference cost per token directly impacts economics.' },
+      { text: 'Multimodal AI processes and generates multiple data types (text, images, audio, video, code) within a single unified framework.' },
+      { text: 'China AI Strategy: Chinese LLMs are optimised heavily for cost and computational efficiency.' },
+      { text: 'Chinese developers spend approximately 1% of the capital compared to US counterparts to build equivalent functionality.' }
+    ]
+  },
+  {
+    id: 'd2-private-capital',
+    day: 2,
+    title: 'Is Private Capital at an Inflection Point?',
+    category: 'finance-investing',
+    tags: ['private-equity', 'private-credit', 'infrastructure', 'capital-allocation', 'manager-selection'],
+    bullets: [
+      { text: 'Institutional capital continues buying more private credit — inflows remain robust despite macro uncertainty.' },
+      { text: 'AI is under B. focus in private markets — emphasis on improving business efficiency rather than speculative bets.' },
+      { text: 'Spreads in private credit should widen from here — compensation for illiquidity is improving.' },
+      { text: 'Infrastructure for the future is the key PE theme: AI power grids and digital economy assets.' },
+      { text: 'Private credit manager selection is less important than private equity manager selection — the asset class is more commoditised.' },
+      { text: 'Private markets must generate returns that justify illiquidity — the bar for new commitments is rising.' },
+      { text: 'Direct lending has grown steadily for decades. The next major growth wave is in specialty finance.' },
+      { text: 'AI implementation at portfolio companies: strictly ROI-driven, treated as a CEO-level responsibility.' }
+    ]
+  },
+  {
+    id: 'd2-public-market',
+    day: 2,
+    title: 'Public Market Dynamics',
+    category: 'finance-investing',
+    tags: ['public-markets', 'singapore', 'fx', 'shareholder-returns', 'communication'],
+    bullets: [
+      { text: 'Proper capital allocation for shareholder return remains the core discipline that separates well-run public companies.' },
+      { text: 'For small countries like Singapore, managing FX carefully matters — investing abroad while liabilities are in SGD creates structural currency risk.' },
+      { text: 'Public companies need to communicate better with investors to build real understanding of strategy and reduce valuation discount.' }
+    ]
+  },
+  {
+    id: 'd2-regional-strategy',
+    day: 2,
+    title: 'UBS Regional Strategy: Markets Outlook',
+    speakers: ['Rohit Arora', 'Sunil Tirumalai', 'James Wang'],
+    category: 'macro-monetary',
+    tags: ['china', 'emerging-markets', 'currency', 'semiconductors', 'korea', 'gold'],
+    bullets: [
+      { text: 'Inflation is good for China — companies can start raising prices again after years of deflation.' },
+      { text: 'AI capex has much more impact on equity markets than the Hormuz situation.' },
+      { text: 'Banks are good investments in a higher-for-longer rate environment.' },
+      { text: 'North Asian FX (KRW, CNY, TWD) are more resilient than South Asian FX (INR, IDR).' },
+      { text: 'People want to diversify out of USD but there are very limited credible alternatives — gold is probably the top choice now.' },
+      { text: 'China consumption is still weak, but property has probably already passed its bottom.' },
+      { text: 'UBS likes Korea and China as top equity picks.' },
+      { text: 'China Tech: Semiconductors remain the top pick, riding a domestic localisation super-cycle.' },
+      { text: 'Supply constraints in specialised tech components will likely persist for another 2-3 years.' },
+      { text: 'Currency vulnerability: The Indian Rupee is vulnerable to Middle East escalations.' },
+      { text: 'China Capex: Corporate-level capital expenditure has turned positive after two consecutive years of decline.' },
+      { text: 'Top Currency Trades: RMB and AUD. Korea Equities: SK Hynix remains a key beneficiary.' }
     ]
   },
   {
@@ -149,76 +306,19 @@ export const sessions: Session[] = [
     title: 'The Wisdom of 60 Years of Investing',
     speakers: ['Jeremy Grantham'],
     category: 'finance-investing',
-    tags: ['investing-strategy', 'wisdom', 'ai-bubble', 'market-cycle'],
+    tags: ['investing-strategy', 'wisdom', 'ai-bubble', 'market-cycle', 'demographics'],
     bullets: [
-      { text: 'Human Bias: Extrapolation is the default human shortcut to reduce cognitive load, but it increases systematic forecasting errors.' },
       { text: 'Pessimism sounds sophisticated, but long-term investment success historically belongs to optimists.' },
-      { text: 'Long-term self-interest is core to human progress and market recovery.' },
+      { text: 'Human Bias: Extrapolation is the default shortcut to reduce cognitive load, but it increases systematic forecasting errors.' },
       { text: 'Two-sigma (extreme) market events occur roughly every 30 years, yet historically none have permanently broken the market paradigm.' },
-      { text: 'Conviction: Have the courage of your convictions. Successful investors seek discreet value, not public heroism.' },
       { text: 'Demographics: We are currently 30 years into a global population bust, which will constrain future growth.' },
       { text: 'Resource scarcity: Major supply crises are looming in basic physical resources.' },
-      { text: 'Clean Energy: Climate technologies and renewables are structural imperatives, not temporary trends.' },
-      { text: 'AI cost of doing business: AI will become table stakes. It represents a new era of intense competition where corporate margins will be squeezed ("blood on the streets").' },
+      { text: 'AI cost of doing business: AI will become table stakes — margins will be squeezed across all sectors ("blood on the streets").' },
       { text: 'Contrarian opportunities: The highest returns are achieved by betting against extreme downward extrapolations.' },
-      { text: 'Market Timing: It is nearly impossible to time the absolute bottom. Successful investors operate on pre-defined policies to scale back into positions.' },
-      { text: 'Upside/Downside Asymmetry: Upside is privatized (you are on your own), while systemic downside is socialized (central bank interventions and bailouts).' },
-      { text: 'AI Bubble debate: AI is a candidate for the most life-changing tech event in human history. History shows bubbles always occur during structural shifts (e.g., the Railroad boom). If this is not a bubble, it will be a historical anomaly.' },
-      { text: 'Capex Warning: Capital expenditure from hyperscalers is compounding rapidly. The risk of near-term over-investment is highly elevated.' },
-      { text: 'Market fundamentals: Equity markets care about company margins, inflation trends, and stable, mild economic growth.' },
-      { text: 'Emerging Markets: Historically, EM equities move in multi-year cycles relative to the S&P 500. Currently, strong dispersion exists across EM returns.' }
-    ]
-  },
-  {
-    id: 'd2-wave-intelligence',
-    day: 2,
-    title: 'Navigating the Wave of Intelligence',
-    category: 'tech-ai',
-    tags: ['ai', 'china', 'efficiency', 'llm'],
-    bullets: [
-      { text: 'China AI Strategy: Chinese LLMs are optimized heavily for cost and computational efficiency.' },
-      { text: 'Efficiency scale: Chinese developers spend approximately 1% of the capital compared to US counterparts to build equivalent functionality.' },
-      { text: 'Multimodality is the immediate focus.' }
-    ]
-  },
-  {
-    id: 'd2-private-capital',
-    day: 2,
-    title: 'Is Private Capital at an Inflection Point?',
-    category: 'finance-investing',
-    tags: ['private-equity', 'private-credit', 'infrastructure', 'capital-allocation'],
-    bullets: [
-      { text: 'Inflows remain robust: Despite negative media coverage, institutional capital continues to flow into private markets.' },
-      { text: 'Private credit focuses heavily on cash flow predictability, remaining relatively insulated from AI speculation.' },
-      { text: 'Direct lending has grown steadily for decades. The next major growth wave is in specialty finance.' },
-      { text: 'Private Equity Focus Areas: Infrastructure assets—specifically AI power grids, digital economy, e-commerce supply chains, and life sciences.' },
-      { text: 'AI implementation: Portfolio companies focus strictly on ROI, with implementation driven as a CEO-level responsibility.' },
-      { text: 'AI is currently viewed primarily as a game of cost and operational efficiency.' }
-    ]
-  },
-  {
-    id: 'd2-regional-strategy',
-    day: 2,
-    title: 'Regional Strategy & Emerging Markets',
-    speakers: ['Rohit Arora', 'Sunil Tirumalai', 'James Wang'],
-    category: 'macro-monetary',
-    tags: ['china', 'emerging-markets', 'currency', 'semiconductors'],
-    bullets: [
-      { text: 'China Tech Strategy: Semiconductors remain the top pick, currently riding a domestic localization super-cycle.' },
-      { text: 'Corporate AI: Focus is on hyperscaler investments and corporate adoption timelines.' },
-      { text: 'Supply constraints in specialized tech components will likely persist for another 2-3 years.' },
-      { text: 'Currency stability: Countries embedded in the AI supply chain are seeing stable/strengthening currencies due to export expansion.' },
-      { text: 'China Macro: The economy is transitioning from deflation to reflation.' },
-      { text: 'Equity Picks: A-Shares, specifically ChiNext (which makes up ~25% of focus), and non-consumer electronics.' },
-      { text: 'EM Energy: Emerging markets are net beneficiaries of structurally higher energy prices.' },
-      { text: 'EM Inflation: Inflation risks are rebounding toward the upper bound due to El Niño climate impacts.' },
-      { text: 'De-dollarization critique: The narrative faces practical hurdles. If central banks diversify away from US Treasuries, what alternative asset can absorb the capital?' },
-      { text: 'Asset spillover: Strong regional stories are getting over-rewarded, leading to spikes in assets like Gold.' },
-      { text: 'Currency vulnerability: The Indian Rupee is vulnerable to Middle East conflict escalations, compounded by multi-year low earnings growth.' },
-      { text: 'China Capex: Corporate-level capital expenditure has turned positive after two consecutive years of decline.' },
-      { text: 'China Property: The secondary housing market is stabilizing, though overall demand remains weak.' },
-      { text: 'Top Currency Trades: RMB and AUD.' },
-      { text: 'Korea Equities: SK Hynix remains a key beneficiary.' }
+      { text: 'Market Timing: It is nearly impossible to time the absolute bottom — operate on pre-defined policies to scale back into positions.' },
+      { text: 'AI Bubble debate: AI is a candidate for the most life-changing tech event in history. If this is not a bubble, it will be a historical anomaly.' },
+      { text: 'Capex Warning: Capital expenditure from hyperscalers is compounding rapidly — risk of near-term over-investment is elevated.' },
+      { text: 'Emerging Markets: Historically, EM equities move in multi-year cycles relative to the S&P 500. Strong dispersion currently exists.' }
     ]
   },
   {
@@ -226,25 +326,35 @@ export const sessions: Session[] = [
     day: 2,
     title: 'Cybersecurity in the Age of Quantum',
     category: 'tech-ai',
-    tags: ['cybersecurity', 'quantum', 'encryption', 'defense'],
+    tags: ['cybersecurity', 'quantum', 'encryption', 'defense', 'basic-hygiene'],
     bullets: [
-      { text: 'Threat vector: "Harvest now, decrypt later" is an active risk where adversaries intercept encrypted data today to decrypt once quantum power is live.' },
-      { text: 'Post-Quantum Cryptography (PQC): The transition to quantum-resistant standards is a critical priority.' },
-      { text: 'Solutions: Solving the quantum threat is currently an engineering challenge rather than a theoretical physics problem.' },
-      { text: 'Feasibility: Quantum computing faces significant bottlenecks, particularly electricity consumption and cooling infrastructure.' },
-      { text: 'Investment thesis: Cybersecurity firms remain highly investable, but selectivity is required. Broad generalizations fail.' }
+      { text: 'Basic security practices can help a lot — e.g. using a password manager reduces the majority of common attack vectors.' },
+      { text: 'Quantum is a few years away, but companies should start thinking and planning for it now.' },
+      { text: 'Threat vector: "Harvest now, decrypt later" is an active risk — adversaries intercept encrypted data today to decrypt once quantum computing is live.' },
+      { text: 'Post-Quantum Cryptography (PQC): Transition to quantum-resistant standards is a critical priority.' },
+      { text: 'Solving the quantum threat is currently an engineering challenge, not a theoretical physics problem.' },
+      { text: 'Quantum computing faces significant bottlenecks: electricity consumption and cooling infrastructure.' }
     ]
   },
   {
     id: 'd2-china-economy',
     day: 2,
-    title: 'The Next Phase of China’s Economy',
+    title: "The Next Phase of China's Economy",
     category: 'macro-monetary',
-    tags: ['china', 'macroeconomics', 'deflation', 'currency'],
+    tags: ['china', 'macroeconomics', 'deflation', 'currency', 'consumption', 'rmb', 'property'],
     bullets: [
-      { text: 'Macro transition: By 2026, China is projected to exit its deflationary phase, similar to Japan\'s inflection point in 2022.' },
-      { text: 'Currency: The Renminbi (RMB) has significant room for appreciation.' },
-      { text: 'AI integration: The AI revolution will trigger short-term structural disruption but yield long-term benefits, comparable to the Industrial Revolution.' }
+      { text: 'China MPC member thinks RMB is likely to appreciate — policy supports a stronger currency.' },
+      { text: 'China should exit deflation in 2026 — driven by oil price recovery, property market bottoming, and wealth effect from rising stock market.' },
+      { text: 'China monetary policy is accommodative — rate environment supports growth.' },
+      { text: 'MPC is currently in wait-and-see mode — no major policy moves expected imminently.' },
+      { text: 'GDP growth in 2026 expected at 4.5%.' },
+      { text: 'Trump\'s visit to China is a relationship improvement signal — Xi is expected to also visit the US.' },
+      { text: 'Government strongly supports innovation — technology investment is a state priority.' },
+      { text: 'Concerned about unemployment — this is a key risk to domestic stability.' },
+      { text: 'Do not expect massive fiscal stimulus — policy will be targeted rather than broad.' },
+      { text: 'Read the Premier\'s report to Congress in March for the clearest policy signals.' },
+      { text: 'Consumption should improve if property market stabilises — household balance sheet recovery is the key variable.' },
+      { text: 'Macro transition: By 2026, China is projected to exit its deflationary phase, similar to Japan\'s inflection point in 2022.' }
     ]
   },
   {
@@ -253,21 +363,20 @@ export const sessions: Session[] = [
     title: 'From Homo Sapiens to the Age of Dataism',
     speakers: ['Yuval Noah Harari'],
     category: 'tech-ai',
-    tags: ['philosophy', 'ai-society', 'trust', 'regulation'],
+    tags: ['philosophy', 'ai-society', 'trust', 'regulation', 'banking', 'history'],
     bullets: [
-      { text: 'Human uniqueness: Cooperation based on inter-personal trust is what allowed humans to dominate (e.g., comparing millions of humans to chimpanzees).' },
-      { text: 'Trust networks: Building trust among strangers is our core capability. Money and financial markets are pure representations of institutional trust.' },
-      { text: 'Trust cycle: Societies go through cycles of losing trust and building new mechanisms to restore it.' },
-      { text: 'Trust erosion: Social media has significantly accelerated the breakdown of traditional trust systems.' },
-      { text: 'Media shift: Social media represents a decentralized, algorithmic model compared to historical centralized broadcasting.' },
-      { text: 'Engagement loops: Social media algorithms control public consumption. They optimize for engagement rather than truth, and the most engaging content is love or hate.' },
-      { text: 'AI financial governance: We risk becoming "horses" in the new economy. AI systems may soon hire, manage, or fire humans based on criteria we cannot understand.' },
-      { text: 'AI Maturity: The technology is still in its infancy with vast development runway ahead.' },
-      { text: 'Disruptive core: Agentic AI represents the primary disruptive threat.' },
-      { text: 'Navigation strategy: Avoid rushing to definitive conclusions. Determine the magnitude of changes. We are entering a hybrid human-AI society.' },
-      { text: 'Cultural shifts: AI is analogous to a massive wave of migration—altering labor markets and changing social culture.' },
-      { text: 'Regulatory proposal: Strict laws should prevent granting AI "legal personhood".' },
-      { text: 'Ethical investing: Venture capitalists and companies should discourage products that exploit human vulnerabilities (e.g., AI companionship).' }
+      { text: 'Human strength is cooperation — it is what allowed humans to dominate at scale compared to any other species.' },
+      { text: 'Banking jobs are fundamentally about building trust — the core product of financial services is trustworthiness.' },
+      { text: 'Money is the most important invention in the world — it enables cooperation among strangers at civilisational scale.' },
+      { text: 'Trust collapses from time to time — people learn mostly from real experience, not instruction.' },
+      { text: 'Many inventions caused social problems before society learned how to handle them — e.g., the printing press led to religious wars (Catholic vs Protestant) before reliable news production became possible.' },
+      { text: 'Algorithms maximise engagement by any method — the most engaging content is extreme love or extreme hate.' },
+      { text: 'Humans are flawed — there is enormous room to exploit our biases, and AI makes exploitation far more scalable.' },
+      { text: 'We are entering a new age of human-and-agent society — the boundary between human and AI decision-making is dissolving.' },
+      { text: 'AI is likely to feel like immigration — it will alter labor markets and change social culture, creating tension and adaptation.' },
+      { text: 'Government should put AI regulation in place — specifically laws preventing granting AI "legal personhood".' },
+      { text: 'Social media has significantly accelerated the breakdown of traditional trust systems.' },
+      { text: 'Agentic AI represents the primary disruptive threat — operating autonomously and at scale.' }
     ]
   },
   {
@@ -275,11 +384,15 @@ export const sessions: Session[] = [
     day: 2,
     title: 'CIO Debate: What Did We Learn?',
     category: 'finance-investing',
-    tags: ['investing', 'macro', 'takeaways', 'allocation'],
+    tags: ['investing', 'macro', 'takeaways', 'allocation', 'ai-valuation', 'tax'],
     bullets: [
+      { text: 'When Anthropic and OpenAI IPO, we will see much more financial information — it will be a valuation reset moment.' },
+      { text: 'Main beneficiaries of AI right now are components in data centres — hardware, power, cooling.' },
+      { text: 'Real use cases now are still not enough to justify the investment — the productivity evidence remains thin.' },
+      { text: 'Tax on AI will come in some form — governments will need to recapture revenue lost from labour displacement.' },
       { text: 'Divergence: High dispersion in regional returns means index investing will underperform active stock selection.' },
-      { text: 'AI Execution: Shift focus from AI hype and hardware Capex to actual corporate ROI and software monetization.' },
-      { text: 'Deglobalization: Global capital flows are fracturing into regional trading blocks, requiring localized portfolio strategies.' }
+      { text: 'AI Execution: Shift focus from AI hype and hardware Capex to actual corporate ROI and software monetisation.' },
+      { text: 'Deglobalisation: Global capital flows are fracturing into regional trading blocks, requiring localised portfolio strategies.' }
     ]
   }
 ];

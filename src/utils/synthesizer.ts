@@ -19,6 +19,7 @@ export interface ReplayRecommendation {
   speakers: string;
   reason: string;
   id: string;
+  url: string;
 }
 
 export interface SynthesisResult {
@@ -33,14 +34,14 @@ export interface SynthesisResult {
 
 // Pre-defined Replays matching the official portal list
 const REPLAY_PORTAL_LIST = [
-  { id: 'd1-tech-future', title: 'Technology, power and the future of growth', speakers: 'Prof. Simon Johnson, The Hon. Dr. Kevin Rudd A.C.' },
-  { id: 'd1-monetary-policy', title: 'What’s next for monetary policy', speakers: 'Adrian Orr, Charles Evans' },
-  { id: 'd1-middle-east-energy', title: 'Middle East risk and the future of energy', speakers: 'Meghan O\'Sullivan' },
-  { id: 'd1-space-frontier', title: 'Space: The economic frontier', speakers: 'Dame Dr. Maggie Aderin' },
-  { id: 'd2-regional-strategy', title: 'Our UBS regional strategy view of markets', speakers: 'Rohit Arora, Sunil Tirumalai, James Wang' },
-  { id: 'd2-wisdom-investing', title: 'The wisdom of 60 years of investing', speakers: 'Jeremy Grantham' },
-  { id: 'd2-dataism', title: 'From Homo Sapiens to the age of dataism', speakers: 'Yuval Harari' },
-  { id: 'd2-ai-infra', title: 'Scaling AI: Next-gen innovation & infrastructure', speakers: 'Lucy Guo, Lila Tretikov' }
+  { id: 'd1-tech-future', title: 'Technology, power and the future of growth', speakers: 'Prof. Simon Johnson, The Hon. Dr. Kevin Rudd A.C.', url: '' },
+  { id: 'd1-monetary-policy', title: 'Whats next for monetary policy', speakers: 'Adrian Orr, Charles Evans', url: '' },
+  { id: 'd1-middle-east-energy', title: 'Middle East risk and the future of energy', speakers: 'Meghan OSullivan', url: '' },
+  { id: 'd1-space-frontier', title: 'Space: The economic frontier', speakers: 'Dame Dr. Maggie Aderin', url: '' },
+  { id: 'd2-regional-strategy', title: 'Our UBS regional strategy view of markets', speakers: 'Rohit Arora, Sunil Tirumalai, James Wang', url: '' },
+  { id: 'd2-wisdom-investing', title: 'The wisdom of 60 years of investing', speakers: 'Jeremy Grantham', url: '' },
+  { id: 'd2-dataism', title: 'From Homo Sapiens to the age of dataism', speakers: 'Yuval Harari', url: '' },
+  { id: 'd2-ai-infra', title: 'Scaling AI: Next-gen innovation & infrastructure', speakers: 'Lucy Guo, Lila Tretikov', url: '' }
 ];
 
 export function synthesizeBriefing(profile: ColleagueProfile): SynthesisResult {
@@ -166,7 +167,7 @@ export function synthesizeBriefing(profile: ColleagueProfile): SynthesisResult {
 
   const replayRecommendation: ReplayRecommendation = {
     ...selectedReplay,
-    reason: replayReason
+    reason: replayReason,
   };
 
   // 2b. Generate intro paragraph
@@ -408,7 +409,7 @@ _${intro}_
 *3 Key Takeaways:*
 ${takeaways.map((tk, idx) => `${idx + 1}. *${tk.title}*
    ${tk.desc}
-   _How it improves your work:_ ${tk.improvement}`).join('\n\n')}
+   _What to think about next:_ ${tk.improvement}`).join('\n\n')}
 
 *Recommended Replay Session to Watch:*
 🎥 *"${replayRecommendation.title}"*
@@ -433,7 +434,7 @@ _Explore the full session notes at your personalized portal link._`;
   <div style="margin-bottom: 20px; padding-left: 12px; border-left: 3px solid #E30613;">
     <h4 style="margin: 0 0 5px 0; font-size: 14px; color: #0f172a; font-weight: bold;">${tk.title}</h4>
     <p style="margin: 0 0 6px 0; font-size: 13px; line-height: 1.5; color: #475569;">${tk.desc}</p>
-    <p style="margin: 0; font-size: 12px; line-height: 1.4; color: #E30613; font-weight: 500;"><strong>How it improves your work:</strong> ${tk.improvement}</p>
+    <p style="margin: 0; font-size: 12px; line-height: 1.4; color: #E30613; font-weight: 500;"><strong>What to think about next:</strong> ${tk.improvement}</p>
   </div>
   `).join('')}
   
