@@ -208,15 +208,15 @@ export function synthesizeBriefing(profile: ColleagueProfile): SynthesisResult {
   // 2b. Generate intro paragraph
   const roleIntros: Record<string, string> = {
     'Management Level': `${name}, as a leader navigating strategic decisions, the AIC 2026 surfaced inflection points that matter most to long-horizon capital allocation — from demographic resource scarcity to algorithmic trust erosion in financial markets.`,
-    'Product Specialist: Fixed Income': `${name}, fixed income markets are entering a structurally higher-rate regime. The AIC highlighted supply-side inflation persistence, private credit resilience, and Hormuz-linked FX volatility that directly shapes duration and allocation decisions.`,
-    'Product Specialist: Equity Funds': `${name}, equity alpha will increasingly come from active EM dispersion plays and screening out AI capex overreach. The AIC outlined exactly where localized supply-chain winners and China's reflation trajectory intersect.`,
-    'Product Specialist: Equities': `${name}, equity alpha will increasingly come from active EM dispersion plays and screening out AI capex overreach. The AIC outlined where China's deflation exit and memory semiconductor bottlenecks create concrete stock-level opportunities.`,
-    'Product Specialist: Private Assets': `${name}, the AIC 2026 mapped three structural PE themes — AI power infrastructure, space data economy, and nuclear SMR energy — that are attracting concentrated institutional inflows into private asset strategies.`,
-    'Product Specialist: Hedge Funds': `${name}, the AIC 2026 provided a toolkit for the current regime: contrarian bottom-entry discipline, EM tactical overlays, and post-quantum cybersecurity hedging as structural long/short themes.`,
-    'Product Specialist: Structured Products': `${name}, the conference crystallized where structured payoffs are anchored — memory semiconductor bandwidth constraints, China LLM cost efficiency, and quantum engineering bottlenecks are the key variables to price.`,
-    'Investment Consultant': `${name}, the AIC reinforced that advisory differentiation runs on communication, disciplined GP selection, and helping clients anchor to long-term demographic and resource realities over short-term noise.`,
-    'Data Analytics': `${name}, the AIC surfaced three high-signal data frontiers — satellite geospatial analytics, multimodal model cost compression, and agentic AI credibility systems — that map directly to modern analytics infrastructure.`,
-    'Sales': `${name}, the AIC highlighted that offline trust networks, energy resilience thematics, and persuasive GP-aligned communication are the differentiating sales levers in a fragmented attention environment.`,
+    'Product Specialist: Fixed Income': `${name}, the AIC reinforced that the rate regime is shifting in ways that directly affect which fixed income funds deserve a place on your platform — from duration risk in the Warsh Fed era to the private credit spread widening opportunity in specialty finance.`,
+    'Product Specialist: Equity Funds': `${name}, the AIC made clear that passive EM exposure will underperform in a high-dispersion world. Your fund selection calls — particularly on China reflation timing and AI capex discipline — are more consequential than ever.`,
+    'Product Specialist: Equities': `${name}, the AIC delivered concrete stock-level signals: memory bandwidth as a structural SK Hynix thesis, China property as a contrarian entry setup, and healthcare as a cheap sector the market has overlooked.`,
+    'Product Specialist: Private Assets': `${name}, the AIC gave you a sharper framework for evaluating Blackstone, KKR, Carlyle and peers — from GP selection criteria to the AI infrastructure deployment theme that is defining the next fund cycle, and the private credit spread widening that makes now a good vintage entry.`,
+    'Product Specialist: Hedge Funds': `${name}, the AIC outlined the regime conditions that favour specific hedge fund strategies — high EM dispersion for L/S equity, tactical FX overlays in macro, and the manager discipline question that separates funds that capture recoveries from those that miss them.`,
+    'Product Specialist: Structured Products': `${name}, the AIC surfaced three concrete note ideas worth developing: a memory semiconductor bandwidth play on SK Hynix, a China reflation recovery structure, and an AI monetisation vs capex divergence basket.`,
+    'Investment Consultant': `${name}, the AIC gave you the building blocks to translate CIO and product team views into confident client conversations — from specific asset class overweights to the narrative frameworks that help clients stay invested when uncertainty is high.`,
+    'Data Analytics': `${name}, the AIC highlighted where AI is creating real leverage for analytics teams — agentic workflows for client data pipelines, cost-efficient model architectures for internal tools, and the data credibility risk that comes from optimising for the wrong objective.`,
+    'Sales': `${name}, the AIC reinforced three things that close deals in the current environment: offline trust as a structural advantage over digital-first competitors, macro themes that make product recommendations land, and GP credibility framing that converts hesitant private asset clients.`,
   };
 
   const intro = roleIntros[role] || `${name}, the UBS AIC 2026 provided a sharp view of global capital cycles, AI's structural impact on markets, and the geopolitical forces reshaping energy and monetary policy over the next decade.`;
@@ -248,168 +248,189 @@ export function synthesizeBriefing(profile: ColleagueProfile): SynthesisResult {
   } else if (role === 'Product Specialist: Fixed Income') {
     takeaways.push(
       {
-        title: 'Structural Inflation Regime Shifts',
-        desc: 'US inflation has consistently run above targets for 6 years. Structural supply-side shifts indicate that higher baseline inflation will persist, creating monetary policy transition disruption.',
-        improvement: 'Enhances fixed-income duration models by pricing in higher-for-longer baseline rates.',
+        title: 'Higher-for-Longer Favours Short Duration & Credit',
+        desc: 'US inflation has run above target for 6 years and structural supply-side shifts suggest this persists. The policy transition from Warsh will be disruptive, keeping rate risk elevated for long-duration funds.',
+        improvement: 'When selecting funds for the platform, prioritise short-duration, floating rate, and investment-grade credit managers over long-duration government bond strategies until the rate path clarifies.',
         sourceSessionId: 'd1-monetary-policy'
       },
       {
-        title: 'Private Credit Cash-Flow Focus',
-        desc: 'Institutional capital continues to flow heavily into direct lending. This market remains insulated from speculative AI valuations, focusing strictly on cash-flow underwriting.',
-        improvement: 'Directs fund selection toward specialty finance and credit underwriting with predictable yields.',
+        title: 'Private Credit Spreads Are Widening — Select Now',
+        desc: 'Institutional capital continues flowing into direct lending, but spreads should widen from here. Specialty finance is the next growth wave, while broad direct lending is becoming commoditised.',
+        improvement: 'This is the moment to differentiate platform offerings — favour private credit managers with specialty finance and asset-backed expertise over generic direct lenders who will face margin compression.',
         sourceSessionId: 'd2-private-capital'
       },
       {
-        title: 'Treasury Capacity & Hormuz FX Hedges',
-        desc: 'The Strait of Hormuz remains a massive global energy leverage point, leaving EM currencies like the Indian Rupee vulnerable, while de-dollarization hurdles preserve US Treasury demand.',
-        improvement: 'Signals when to trigger FX hedges on INR and manage liquid Treasury asset reserves.',
-        sourceSessionId: 'd1-middle-east-energy'
+        title: 'EM Bond Funds: Watch INR and FX Hedge Quality',
+        desc: 'The Indian Rupee is structurally vulnerable to Middle East escalation and multi-year low earnings growth. De-dollarisation pressure keeps US Treasury demand intact but adds FX complexity for EM allocations.',
+        improvement: 'When doing DD on EM fixed income funds, scrutinise how managers hedge INR exposure and whether their FX overlay is systematic or discretionary — this is a key differentiator in the current regime.',
+        sourceSessionId: 'd2-regional-strategy'
       }
     );
-  } else if (role === 'Product Specialist: Equity Funds' || role === 'Product Specialist: Equities') {
+  } else if (role === 'Product Specialist: Equity Funds') {
     takeaways.push(
       {
-        title: 'Emerging Market return dispersion',
-        desc: 'EM equities show high dispersion rather than uniform cycles. Specific localized winners—like A-shares (ChiNext making up ~25% of focus), SK Hynix, and non-consumer electronics—should lead.',
-        improvement: 'Enables active stock-selection to outperform broad indices by targeting localized supply-chain winners.',
+        title: 'High EM Dispersion Rewards Active Managers',
+        desc: 'EM equities are not moving in uniform cycles — there is extreme return dispersion across countries and sectors. Index investors will underperform; the winners are localised supply-chain plays, not broad baskets.',
+        improvement: 'Use this to justify active EM fund selection over passive on your platform. Prioritise managers with concentrated EM conviction and strong country-level research depth over those running diversified EM indices.',
         sourceSessionId: 'd2-regional-strategy'
       },
       {
-        title: 'China Deflation Exit by 2026',
-        desc: 'Corporate-level capex declines have reversed. China is projected to exit deflation by 2026, echoing Japan\'s pivotal turn in 2022 and creating room for Renminbi appreciation.',
-        improvement: 'Informs buy entry timings in undervalued Chinese equities ahead of the reflation pricing.',
+        title: 'China Reflation Is the Key Fund Entry Timing Signal',
+        desc: 'China is projected to exit deflation by 2026 as property bottoms, oil recovers, and stock market wealth effects kick in. Corporate capex has already turned positive after two years of decline.',
+        improvement: 'This is the DD moment for China-focused equity fund managers — assess which ones are positioned ahead of the reflation rather than waiting for confirmation. Fund flows are still very light, suggesting the window is open.',
         sourceSessionId: 'd2-china-economy'
       },
       {
-        title: 'AI Margin Compression Screening',
-        desc: 'Corporate AI implementation is an efficiency play. Avoid generic tech baskets; screen stocks based on real pricing power and margins to survive the capex bubble correction.',
-        improvement: 'Screens out overvalued tech equities lacking direct monetization and operational cash flows.',
+        title: 'Screen Fund Managers on AI Capex Discipline',
+        desc: 'Hyperscaler capex is compounding rapidly and the AI bubble risk is real. Managers running generic tech or mega-cap baskets are overexposed. The conference consensus: screen for earnings quality and margin resilience, not AI narrative.',
+        improvement: 'In equity fund DD, add a question on how managers distinguish between AI beneficiaries with real cash flows versus those riding the capex hype. This separates disciplined stock-pickers from momentum chasers.',
         sourceSessionId: 'd2-wisdom-investing'
+      }
+    );
+  } else if (role === 'Product Specialist: Equities') {
+    takeaways.push(
+      {
+        title: 'SK Hynix: Structural AI Memory Play',
+        desc: 'AI bottlenecks have shifted from compute to memory bandwidth. HBM is a permanent fixture and SK Hynix is the leading beneficiary. KV cache expansion is now pushing demand into NAND flash — extending the cycle.',
+        improvement: 'SK Hynix is a high-conviction long. Model the bandwidth bottleneck as a multi-year earnings driver, not a one-quarter cycle. Cross-check with the regional strategy view that Korea is a top UBS equity pick.',
+        sourceSessionId: 'd1-memory-semis'
+      },
+      {
+        title: 'China Property Bottom — Entry Window Opening',
+        desc: 'The secondary housing market is stabilising, corporate capex has turned positive, and China is on track to exit deflation by 2026. Investor positioning remains very light — a contrarian entry signal.',
+        improvement: 'Look at China property-adjacent names (developers, banks, consumer) for asymmetric upside. The setup echoes Japan 2022. The risk is timing; property stabilisation, not a full recovery, is the base case for now.',
+        sourceSessionId: 'd2-china-economy'
+      },
+      {
+        title: 'Healthcare: Cheap Versus Fundamentals',
+        desc: 'Healthcare is the only sector still meaningfully hiring and is flagged as cheap relative to fundamentals in the equity strategy outlook. It is insulated from AI capex risk and benefits from demographic aging tailwinds.',
+        improvement: 'Healthcare is a contrarian long in a market dominated by tech narratives. Screen for healthcare names with pricing power and patent pipelines — the sector has not been bid up despite strong structural demand.',
+        sourceSessionId: 'd2-equity-strategy'
       }
     );
   } else if (role === 'Product Specialist: Private Assets') {
     takeaways.push(
       {
-        title: 'Digital & Energy PE Infrastructure',
-        desc: 'Private equity inflows are concentrating on AI power grids, digital economy infrastructure, and logistics supply lines, overseen directly at the portfolio CEO level.',
-        improvement: 'Aligns infrastructure project underwriting with structural grid capacity and e-commerce growth patterns.',
+        title: 'GP Selection: The Conference Framework for Top Managers',
+        desc: 'The conference outlined clear criteria for evaluating GPs: proven long-term track record, aligned and fair fee structures, and career longevity that spans the full fund life cycle. These apply directly when assessing Blackstone, KKR, Carlyle, and peers.',
+        improvement: 'Use these as the backbone of your DD framework. When presenting managers to clients, structure your recommendation around these three pillars — track record, fee alignment, and team stability — rather than AUM or brand name alone.',
+        sourceSessionId: 'd1-global-capital'
+      },
+      {
+        title: 'AI Infrastructure Is the Dominant PE Deployment Theme',
+        desc: 'Major PE houses are concentrating inflows on AI power grids, digital economy infrastructure, and e-commerce supply chains. This is being treated as a CEO-level portfolio priority, not an opportunistic bet.',
+        improvement: 'When evaluating managers like Blackstone Infrastructure or KKR Global Infrastructure, assess how explicitly they are positioned on AI power and data centre assets. This is the theme that will drive returns in the next fund cycle.',
         sourceSessionId: 'd2-private-capital'
       },
       {
-        title: 'Space launch cost compression',
-        desc: 'Satellite launch costs fell 90% in a decade, creating a high-yield three-tier economic stack. SpaceX holds a monopoly, while China emerges as a key sovereign launch competitor.',
-        improvement: 'Flags early-stage venture windows in satellite broadband, maritime analytics, and ground infra.',
-        sourceSessionId: 'd1-space-frontier'
-      },
-      {
-        title: 'Nuclear Energy Security SMRs',
-        desc: 'Energy resilience is driving European and global policy. Nuclear energy has strong 5-10 year prospects, with Small Modular Reactors (SMRs) approaching commercial viability.',
-        improvement: 'Guides project-finance deployments into SMR developers and secure energy transition infrastructure.',
-        sourceSessionId: 'd1-middle-east-energy'
+        title: 'Private Credit Spreads Widening — Timing for Client Allocation',
+        desc: 'Spreads in private credit should widen from here, improving the illiquidity premium for new commitments. Private credit manager selection is less critical than PE — the asset class is more commoditised — but vintage timing matters significantly.',
+        improvement: 'This is a good moment to recommend new private credit allocations to clients. Focus client conversations on the spread widening opportunity and the cash-flow predictability advantage over liquid fixed income in a volatile rate environment.',
+        sourceSessionId: 'd2-private-capital'
       }
     );
   } else if (role === 'Product Specialist: Hedge Funds') {
     takeaways.push(
       {
-        title: 'Contrarian Bottom Entry Policies',
-        desc: 'Asymmetric returns will come from contrarian bets against extreme downward extrapolations. Successful funds enforce strict policies to scale back in rather than trying to call the absolute bottom.',
-        improvement: 'Establishes structured buying rules to capture value at extreme lows without timing risks.',
-        sourceSessionId: 'd2-wisdom-investing'
-      },
-      {
-        title: 'Tactical EM Overlays & Gold spillovers',
-        desc: 'Geopolitical energy premium hikes from the Strait of Hormuz will trigger EM return dispersion. Hedging INR and long positions on AUD, RMB, and Gold are key trades.',
-        improvement: 'Structures tactical FX and precious metal overlays to offset global inflationary shocks.',
+        title: 'EM Dispersion Favours L/S Equity Managers with Asia Depth',
+        desc: 'High return dispersion across EM markets is exactly the environment where skilled long/short equity managers outperform. Localised winners in Korea semis, China A-shares, and AUD/RMB currency plays create multiple independent alpha sources.',
+        improvement: 'When doing DD on L/S equity hedge funds, prioritise managers with dedicated Asia/EM research desks and a track record in high-dispersion environments. Generic global macro funds will struggle to capture these localised moves.',
         sourceSessionId: 'd2-regional-strategy'
       },
       {
-        title: 'Quantum Decryption Security Hedging',
-        desc: 'The "harvest now, decrypt later" threat is active. Adversaries intercept data today to decrypt once quantum computing is online. Selecting quantum-resistant assets is key.',
-        improvement: 'Supports shorting companies lacking post-quantum transition plans and going long on post-quantum standards leaders.',
-        sourceSessionId: 'd2-cybersecurity'
+        title: 'Assess Manager Re-Entry Discipline, Not Just Returns',
+        desc: 'Grantham\'s key message: the highest returns come from betting against extreme downward extrapolations, but near-zero managers can time the absolute bottom. What separates great funds is pre-defined policies to scale back into positions systematically.',
+        improvement: 'Add a DD question on how managers operationalise contrarian positioning — do they have a rules-based re-entry framework or are they discretionary? The former is far more defensible and reduces the risk of sitting out the recovery.',
+        sourceSessionId: 'd2-wisdom-investing'
+      },
+      {
+        title: 'Macro Overlay Capacity: Gold, RMB, AUD vs INR',
+        desc: 'The conference flagged clear tactical FX trades: long Gold as the primary USD diversifier, long RMB and AUD on China reflation, short/hedge INR given Middle East and earnings vulnerability. Macro funds with these overlays are best positioned.',
+        improvement: 'When presenting macro or multi-strategy hedge funds to clients, assess whether they have active FX overlay capacity and current positioning on these pairs. Managers already long Gold and RMB have the strongest narrative heading into H2.',
+        sourceSessionId: 'd2-regional-strategy'
       }
     );
   } else if (role === 'Product Specialist: Structured Products') {
     takeaways.push(
       {
-        title: 'Memory Semis Bandwidth Bottleneck',
-        desc: 'AI training bottlenecks have shifted from compute to memory bandwidth. HBM is permanent, but expanding KV caches are forcing LLMs to utilize NAND flash.',
-        improvement: 'Informs structured yield notes linked to memory manufacturers (like SK Hynix) and flash suppliers.',
+        title: 'SK Hynix / HBM Bandwidth Note Idea',
+        desc: 'AI training bottlenecks have permanently shifted to memory bandwidth. HBM demand is structural and KV cache expansion is pushing a second wave into NAND flash. SK Hynix is the clearest beneficiary with high earnings visibility.',
+        improvement: 'Launch a capital-protected or leveraged note on SK Hynix or a memory semiconductor basket (SK Hynix + Samsung semis). The bandwidth story is multi-year, giving the note a compelling 12–18 month investment horizon for clients.',
         sourceSessionId: 'd1-memory-semis'
       },
       {
-        title: 'Chinese LLM cost efficiency',
-        desc: 'Chinese developers spend only 1% of the Capex compared to US competitors, optimizing for multimodality and cheap client-device implementation.',
-        improvement: 'Helps design structured baskets linked to highly efficient Chinese technology integrations.',
-        sourceSessionId: 'd2-wave-intelligence'
+        title: 'China Reflation Recovery Note',
+        desc: 'China is positioned to exit deflation by 2026 — property bottoming, capex turning positive, accommodative monetary policy, and very light investor positioning. The setup resembles Japan\'s inflection in 2022.',
+        improvement: 'Structure a participation note on China A-shares or a China recovery basket (property, banks, consumer). The light positioning means entry levels are attractive. Frame it around the deflation exit catalyst with a 12–24 month horizon.',
+        sourceSessionId: 'd2-china-economy'
       },
       {
-        title: 'Quantum Engineering Bottlenecks',
-        desc: 'Quantum computing and semiconductor scaling are limited by energy grids, cooling, and mechanical engineering talent, not just theoretical physics.',
-        improvement: 'Aids in pricing structured indexes by accounting for engineering and grid latency bottlenecks.',
-        sourceSessionId: 'd2-cybersecurity'
+        title: 'AI Monetisation vs Capex Divergence Basket',
+        desc: 'The conference consensus is clear: AI capex is building toward a bubble while real monetisation lags. Microsoft, Anthropic-adjacent software players, and agent infrastructure are pulling ahead; hardware capex plays face correction risk.',
+        improvement: 'Design a long/short structured basket note: long AI monetisation (enterprise software, agents, cloud efficiency players) versus short hyperscaler capex-heavy names. This gives clients a differentiated AI exposure without pure directional risk.',
+        sourceSessionId: 'd2-ai-infra'
       }
     );
   } else if (role === 'Investment Consultant') {
     takeaways.push(
       {
-        title: 'GP Selection Rules',
-        desc: 'Prioritize general partners with proven long-term track records, fair and aligned fee structures, and career longevity that covers the fund investment life cycle.',
-        improvement: 'Refines due-diligence screens for advisory clients selecting private equity and credit managers.',
-        sourceSessionId: 'd1-global-capital'
+        title: 'Translating CIO Views Into Client Portfolios',
+        desc: 'The conference crystallised several clear CIO-level asset class signals: overweight Korea and China equities, favour banks in higher-for-longer rates, treat Gold as the primary USD diversifier, and underweight Europe given macro and Iran war headwinds.',
+        improvement: 'Use these as the bridge between CIO macro views and client portfolio conversations. When a client pushes back on China or asks about gold, you now have a concrete conference narrative — not just a model view — to anchor the recommendation.',
+        sourceSessionId: 'd2-regional-strategy'
       },
       {
-        title: 'Persuasive Advisory Communication',
-        desc: 'Technical credentials are standard; the ultimate advisory differentiator is communication—the ability to structure clear, persuasive arguments for clients.',
-        improvement: 'Maintains higher client retention and assets under management by framing portfolio shifts with trust and clarity.',
-        sourceSessionId: 'd1-global-capital'
+        title: 'Private Assets Allocation: When and Why to Commit Now',
+        desc: 'Private credit spreads are widening, creating a better entry point for new commitments. PE inflows are concentrating on AI infrastructure themes. Vintage timing in private markets matters more than manager selection in credit — now is a favourable entry.',
+        improvement: 'For clients with under-allocated private assets, use the spread widening narrative to make the timing case for new credit commitments. For PE, frame the conversation around the AI infrastructure deployment thesis to align with what top managers like Blackstone and KKR are building.',
+        sourceSessionId: 'd2-private-capital'
       },
       {
-        title: 'Strategic Demographics and Optimism',
-        desc: 'Demographic population busts and resource scarcity are 20-30 year structural realities. Pessimism sounds smart, but compounding optimism is what secures client wealth.',
-        improvement: 'Enables aligning generational family wealth plans with long-term resources and renewables.',
+        title: 'Communicating Uncertainty Without Losing Client Conviction',
+        desc: 'Forecast confidence across macro variables is unusually low right now. The conference explicitly noted that uncertainty is very high. Clients will feel this in markets — the advisor role is to hold the framework when sentiment is fragile.',
+        improvement: 'Frame client conversations around long-term structural themes (China reflation, AI productivity, demographic-driven resource scarcity) rather than short-term calls. This is exactly what Grantham advocated: pessimism sounds smart, but disciplined optimism is what compounds wealth.',
         sourceSessionId: 'd2-wisdom-investing'
       }
     );
   } else if (role === 'Data Analytics') {
     takeaways.push(
       {
-        title: 'Satellite Space Data Analytics',
-        desc: 'Launch cost compression is flooding orbits with sensors. The value lies in the data analytics layer, using AI to track wave shapes and environmental assets.',
-        improvement: 'Directs the engineering of geospatial algorithms to track maritime freight and carbon indexes.',
-        sourceSessionId: 'd1-space-frontier'
+        title: 'Agentic AI Can Automate Repetitive Client Data Work',
+        desc: 'Agentic AI is the core system disruptor — it operates 24/7, can run multi-step data pipelines, and is getting cheaper rapidly due to Chinese model competition. Real enterprise adoption is accelerating faster than expected.',
+        improvement: 'Identify the most repetitive client data tasks in your current workflow — report generation, segmentation runs, flagging anomalies — and evaluate whether an agentic workflow can handle them. The cost per token is falling fast, making the ROI case stronger every quarter.',
+        sourceSessionId: 'd2-ai-infra'
       },
       {
-        title: 'Multimodal cost efficiency',
-        desc: 'China\'s developers build models at 1% of the compute cost of US hyperscalers. Data formatting and architectural efficiency are the core drivers of ROI.',
-        improvement: 'Reduces internal operational overhead by utilizing smaller, highly-tuned multimodal models.',
+        title: 'Build Internal Models Cheap with Efficient Architectures',
+        desc: 'Chinese developers build multimodal models at 1% of US hyperscaler costs through architectural efficiency and data formatting discipline. The lesson applies directly to internal analytics model building — cost efficiency is a design choice, not a constraint.',
+        improvement: 'Before commissioning large internal model projects, benchmark against smaller, highly-tuned models. The conference evidence suggests that right-sized, efficient models outperform on cost-to-insight ratio for most client analytics use cases.',
         sourceSessionId: 'd2-wave-intelligence'
       },
       {
-        title: 'Agentic AI & Algorithmic Engagement',
-        desc: 'Agentic AI represents the core system disruptor. Internal algorithms must prioritize data credibility over basic engagement triggers.',
-        improvement: 'Guides the development of internal data retrieval systems that prioritize source factual truth.',
+        title: 'Data Credibility Is the Core Risk in Client Insights',
+        desc: 'The Harari session highlighted how algorithms that optimise for engagement rather than truth systematically degrade trust. The same risk applies to internal analytics: models optimised for the wrong objective function will produce misleading client insights.',
+        improvement: 'Audit your current client analytics pipelines for objective function alignment — are you optimising for the insight that is true, or the one that is engaging to stakeholders? Building in data credibility checks is not just good practice; it is how you avoid the trust collapse the conference warned about.',
         sourceSessionId: 'd2-dataism'
       }
     );
   } else if (role === 'Sales') {
     takeaways.push(
       {
-        title: 'Offline Client Trust Networks',
-        desc: 'Financial markets run on trust pools. In a decentralized media environment dominated by engagement-engagement algorithms, Sales must rebuild offline trust networks.',
-        improvement: 'Improves prospect conversion by hosting high-touch, trust-building offline events to address client anxiety.',
+        title: 'Rebuild Offline Trust — It Is a Structural Advantage Now',
+        desc: 'Financial markets run on trust pools and social media algorithms are actively eroding them by optimising for engagement over truth. In this environment, clients are more anxious and more sceptical of digital-first relationships.',
+        improvement: 'High-touch offline client events are not just nice-to-have — they are a structural competitive advantage that digital-native competitors cannot replicate. Prioritise in-person conversations for any client who is hesitant, uncertain, or being targeted by other providers.',
         sourceSessionId: 'd2-dataism'
       },
       {
-        title: 'Energy Resilience Thematics',
-        desc: 'Energy security is driving nuclear energy adoption, SMR commercialization, and clean premiums. Share these resilient structural trends with clients.',
-        improvement: 'Equips client conversations with secular infrastructure opportunities that are insulated from short-term inflation volatility.',
-        sourceSessionId: 'd1-middle-east-energy'
+        title: 'Lead With Conference Themes, Not Just Product Pitches',
+        desc: 'The AIC surfaced clear macro narratives clients care about: China recovery, AI productivity, energy security, and gold as a USD hedge. These are the conversations clients want to have — product recommendations land better when they follow a compelling theme.',
+        improvement: 'Open client meetings with one of these macro themes before transitioning to product. Ask which themes resonate most, then connect to the relevant offering. This mirrors what the conference said about advisory differentiation: communication and framing matter as much as the product itself.',
+        sourceSessionId: 'd2-regional-strategy'
       },
       {
-        title: 'Persuasive Communication & GP Alignment',
-        desc: 'Persuasion is the key commercial skill. Ground client recommendations in proven GP track records and realistic expectations rather than short-term hype.',
-        improvement: 'Builds long-term client credibility, aligning product pitches with actual manager capacities.',
+        title: 'GP Track Record and Fee Alignment Close Private Asset Deals',
+        desc: 'The conference was explicit: the winning pitch for private assets is built on three things — GP track record, fee alignment, and career longevity of the management team. Clients who hesitate on private markets are usually uncertain about manager quality, not the asset class.',
+        improvement: 'When selling private asset products, structure the conversation around these three GP pillars rather than leading with return targets. Clients who trust the manager commit — those who are sold on yield targets alone often redeem or complain later.',
         sourceSessionId: 'd1-global-capital'
       }
     );
