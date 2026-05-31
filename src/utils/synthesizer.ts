@@ -34,15 +34,47 @@ export interface SynthesisResult {
 
 // Pre-defined Replays matching the official portal list
 const REPLAY_PORTAL_LIST = [
-  { id: 'd1-tech-future', title: 'Technology, power and the future of growth', speakers: 'Prof. Simon Johnson, The Hon. Dr. Kevin Rudd A.C.', url: '' },
-  { id: 'd1-monetary-policy', title: 'Whats next for monetary policy', speakers: 'Adrian Orr, Charles Evans', url: '' },
-  { id: 'd1-middle-east-energy', title: 'Middle East risk and the future of energy', speakers: 'Meghan OSullivan', url: '' },
-  { id: 'd1-space-frontier', title: 'Space: The economic frontier', speakers: 'Dame Dr. Maggie Aderin', url: '' },
-  { id: 'd2-regional-strategy', title: 'Our UBS regional strategy view of markets', speakers: 'Rohit Arora, Sunil Tirumalai, James Wang', url: '' },
-  { id: 'd2-wisdom-investing', title: 'The wisdom of 60 years of investing', speakers: 'Jeremy Grantham', url: '' },
-  { id: 'd2-dataism', title: 'From Homo Sapiens to the age of dataism', speakers: 'Yuval Harari', url: '' },
-  { id: 'd2-ai-infra', title: 'Scaling AI: Next-gen innovation & infrastructure', speakers: 'Lucy Guo, Lila Tretikov', url: '' }
+  { id: 'd1-tech-future', title: 'Technology, power and the future of growth', speakers: 'Prof. Simon Johnson, The Hon. Dr. Kevin Rudd A.C.', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
+  { id: 'd1-monetary-policy', title: 'Whats next for monetary policy', speakers: 'Adrian Orr, Charles Evans', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
+  { id: 'd1-middle-east-energy', title: 'Middle East risk and the future of energy', speakers: 'Meghan OSullivan', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
+  { id: 'd1-space-frontier', title: 'Space: The economic frontier', speakers: 'Dame Dr. Maggie Aderin', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
+  { id: 'd2-regional-strategy', title: 'Our UBS regional strategy view of markets', speakers: 'Rohit Arora, Sunil Tirumalai, James Wang', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
+  { id: 'd2-wisdom-investing', title: 'The wisdom of 60 years of investing', speakers: 'Jeremy Grantham', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
+  { id: 'd2-dataism', title: 'From Homo Sapiens to the age of dataism', speakers: 'Yuval Harari', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
+  { id: 'd2-ai-infra', title: 'Scaling AI: Next-gen innovation & infrastructure', speakers: 'Lucy Guo, Lila Tretikov', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' }
 ];
+
+// Shorten a session title to max 7 words
+function shortenTitle(title: string): string {
+  const words = title.split(' ');
+  return words.length > 7 ? words.slice(0, 7).join(' ') + '...' : title;
+}
+
+// Generate a role + category aware "what to think about next" hint
+function queryImprovement(role: string, category: string): string {
+  const categoryHints: Record<string, string> = {
+    'tech-ai': 'how this technology shift affects your work and client conversations.',
+    'macro-monetary': 'how this macro dynamic should influence your positioning and recommendations.',
+    'geopolitics-energy': 'how this geopolitical or energy risk factors into your near-term decisions.',
+    'finance-investing': 'how to apply this investing principle to your current mandates.',
+    'semiconductors': 'how this semiconductor trend affects the companies or products you follow.',
+  };
+  const rolePrefix: Record<string, string> = {
+    'Management Level': 'Consider',
+    'Product Specialist: Fixed Income': 'Reflect on',
+    'Product Specialist: Equity Funds': 'Assess',
+    'Product Specialist: Equities': 'Assess',
+    'Product Specialist: Private Assets': 'Evaluate',
+    'Product Specialist: Hedge Funds': 'Factor in',
+    'Product Specialist: Structured Products': 'Consider',
+    'Investment Consultant': 'Think about',
+    'Data Analytics': 'Explore',
+    'Sales': 'Consider',
+  };
+  const prefix = rolePrefix[role] || 'Consider';
+  const hint = categoryHints[category] || 'how this insight applies to your current work priorities.';
+  return `${prefix} ${hint}`;
+}
 
 export function synthesizeBriefing(profile: ColleagueProfile): SynthesisResult {
   const name = profile.name.trim() || 'You';
@@ -53,14 +85,17 @@ export function synthesizeBriefing(profile: ColleagueProfile): SynthesisResult {
   const scoredSessions = sessions.map(session => {
     let score = 0;
 
-    // Direct text query matching (highest priority)
+    // Direct text query matching — score each word independently so multi-word queries work
     if (query !== '') {
-      if (session.title.toLowerCase().includes(query)) score += 8;
-      session.tags.forEach(t => {
-        if (t.toLowerCase().includes(query)) score += 5;
-      });
-      session.bullets.forEach(b => {
-        if (b.text.toLowerCase().includes(query)) score += 2;
+      const queryWords = query.split(/\s+/).filter(w => w.length > 2);
+      queryWords.forEach(word => {
+        if (session.title.toLowerCase().includes(word)) score += 8;
+        session.tags.forEach(t => {
+          if (t.toLowerCase().includes(word)) score += 5;
+        });
+        session.bullets.forEach(b => {
+          if (b.text.toLowerCase().includes(word)) score += 2;
+        });
       });
     }
 
@@ -400,6 +435,48 @@ export function synthesizeBriefing(profile: ColleagueProfile): SynthesisResult {
         sourceSessionId: 'd1-middle-east-energy'
       }
     );
+  }
+
+  // 4. If a custom query produced strong session matches, override takeaways dynamically
+  // A score >= 3 means at least a tag match or multiple bullet matches — meaningful signal.
+  if (query !== '') {
+    const queryWords = query.split(/\s+/).filter(w => w.length > 2);
+    const strongMatches = sortedScored.filter(s => s.score >= 3);
+
+    if (strongMatches.length > 0) {
+      const queryTakeaways: Takeaway[] = strongMatches.slice(0, 3).map(({ session }) => {
+        // Find the single bullet most relevant to the query words
+        let bestBullet = session.bullets[0];
+        let bestBulletScore = 0;
+        session.bullets.forEach(b => {
+          const bulletScore = queryWords.reduce((acc, w) => acc + (b.text.toLowerCase().includes(w) ? 1 : 0), 0);
+          if (bulletScore > bestBulletScore) {
+            bestBulletScore = bulletScore;
+            bestBullet = b;
+          }
+        });
+
+        return {
+          title: shortenTitle(session.title),
+          desc: bestBullet.text,
+          improvement: queryImprovement(role, session.category),
+          sourceSessionId: session.id,
+        };
+      });
+
+      // If fewer than 3 strong query matches, fill remaining slots from role-based takeaways
+      if (queryTakeaways.length < 3) {
+        const usedIds = new Set(queryTakeaways.map(t => t.sourceSessionId));
+        for (const tk of takeaways) {
+          if (!usedIds.has(tk.sourceSessionId) && queryTakeaways.length < 3) {
+            queryTakeaways.push(tk);
+            usedIds.add(tk.sourceSessionId);
+          }
+        }
+      }
+
+      takeaways.splice(0, takeaways.length, ...queryTakeaways);
+    }
   }
 
   // Generate Slack text
