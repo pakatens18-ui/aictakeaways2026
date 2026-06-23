@@ -151,6 +151,9 @@ export default function App() {
           <div className="replay-reason">
             <strong>Why watch: </strong>{briefing.replayRecommendation.reason}
           </div>
+          <div className="replay-access-note">
+            <strong>Access:</strong> Login with your registered email · Passcode: <code>P184948</code> · Replays available until 28 June 2026
+          </div>
         </div>
 
         {/* Takeaways */}
