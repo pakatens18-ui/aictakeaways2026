@@ -152,7 +152,7 @@ export default function App() {
             <strong>Why watch: </strong>{briefing.replayRecommendation.reason}
           </div>
           <div className="replay-access-note">
-            <strong>Access:</strong> Login with your registered email · Passcode: <code>P184948</code> · Replays available until 28 June 2026
+            <strong>Access:</strong> Email: <code>nutchaya.sukh@kkpfg.com</code> · Passcode: <code>P184948</code> · Replays available until 28 June 2026
           </div>
         </div>
 
