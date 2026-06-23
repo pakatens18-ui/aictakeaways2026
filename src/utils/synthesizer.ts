@@ -34,14 +34,14 @@ export interface SynthesisResult {
 
 // Pre-defined Replays matching the official portal list
 const REPLAY_PORTAL_LIST = [
-  { id: 'd1-tech-future', title: 'Technology, power and the future of growth', speakers: 'Prof. Simon Johnson, The Hon. Dr. Kevin Rudd A.C.', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
-  { id: 'd1-monetary-policy', title: 'Whats next for monetary policy', speakers: 'Adrian Orr, Charles Evans', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
-  { id: 'd1-middle-east-energy', title: 'Middle East risk and the future of energy', speakers: 'Meghan OSullivan', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
-  { id: 'd1-space-frontier', title: 'Space: The economic frontier', speakers: 'Dame Dr. Maggie Aderin', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
-  { id: 'd2-regional-strategy', title: 'Our UBS regional strategy view of markets', speakers: 'Rohit Arora, Sunil Tirumalai, James Wang', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
-  { id: 'd2-wisdom-investing', title: 'The wisdom of 60 years of investing', speakers: 'Jeremy Grantham', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
-  { id: 'd2-dataism', title: 'From Homo Sapiens to the age of dataism', speakers: 'Yuval Harari', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' },
-  { id: 'd2-ai-infra', title: 'Scaling AI: Next-gen innovation & infrastructure', speakers: 'Lucy Guo, Lila Tretikov', url: 'https://conference.ubs.com/reg/page.asp?tkn=0641410c7ede6a269025d654e49f679c1ea495e7&id=3232&cid=286810&passcode=p184948' }
+  { id: 'd1-tech-future', title: 'Technology, power and the future of growth', speakers: 'Prof. Simon Johnson, The Hon. Dr. Kevin Rudd A.C.', url: 'https://conference.ubs.com/reg/page.asp?id=3232&tkn=44faede6f4c84091b06893068224a3a10cc95e78' },
+  { id: 'd1-monetary-policy', title: 'Whats next for monetary policy', speakers: 'Adrian Orr, Charles Evans', url: 'https://conference.ubs.com/reg/page.asp?id=3232&tkn=44faede6f4c84091b06893068224a3a10cc95e78' },
+  { id: 'd1-middle-east-energy', title: 'Middle East risk and the future of energy', speakers: 'Meghan OSullivan', url: 'https://conference.ubs.com/reg/page.asp?id=3232&tkn=44faede6f4c84091b06893068224a3a10cc95e78' },
+  { id: 'd1-space-frontier', title: 'Space: The economic frontier', speakers: 'Dame Dr. Maggie Aderin', url: 'https://conference.ubs.com/reg/page.asp?id=3232&tkn=44faede6f4c84091b06893068224a3a10cc95e78' },
+  { id: 'd2-regional-strategy', title: 'Our UBS regional strategy view of markets', speakers: 'Rohit Arora, Sunil Tirumalai, James Wang', url: 'https://conference.ubs.com/reg/page.asp?id=3232&tkn=44faede6f4c84091b06893068224a3a10cc95e78' },
+  { id: 'd2-wisdom-investing', title: 'The wisdom of 60 years of investing', speakers: 'Jeremy Grantham', url: 'https://conference.ubs.com/reg/page.asp?id=3232&tkn=44faede6f4c84091b06893068224a3a10cc95e78' },
+  { id: 'd2-dataism', title: 'From Homo Sapiens to the age of dataism', speakers: 'Yuval Harari', url: 'https://conference.ubs.com/reg/page.asp?id=3232&tkn=44faede6f4c84091b06893068224a3a10cc95e78' },
+  { id: 'd2-ai-infra', title: 'Scaling AI: Next-gen innovation & infrastructure', speakers: 'Lucy Guo, Lila Tretikov', url: 'https://conference.ubs.com/reg/page.asp?id=3232&tkn=44faede6f4c84091b06893068224a3a10cc95e78' }
 ];
 
 // Shorten a session title to max 7 words
