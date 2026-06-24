@@ -58,7 +58,12 @@ export default function App() {
       {/* Sidebar */}
       <aside className="sidebar">
         <div className="logo-container">
-          <span className="logo-ubs">UBS</span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            <div>
+              <span className="logo-ubs">UBS</span>
+            </div>
+            <img src="/team-photo.jpg" alt="Team" className="header-team-photo" />
+          </div>
           <span className="logo-subtitle">Asia Investment Conference 2026</span>
           <span className="logo-title">Personal Takeaway Briefing</span>
         </div>
@@ -114,7 +119,6 @@ export default function App() {
             </p>
           </div>
           <div className="header-actions">
-            <img src="/team-photo.jpg" alt="Team" className="header-team-photo" />
             <button onClick={handleSavePhoto} className="btn-primary" title="Save as image" disabled={savingPhoto}>
               <Camera size={15} />
               {savingPhoto ? 'Saving…' : 'Save Photo'}
