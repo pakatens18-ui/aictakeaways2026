@@ -114,6 +114,7 @@ export default function App() {
             </p>
           </div>
           <div className="header-actions">
+            <img src="/team-photo.jpg" alt="Team" className="header-team-photo" />
             <button onClick={handleSavePhoto} className="btn-primary" title="Save as image" disabled={savingPhoto}>
               <Camera size={15} />
               {savingPhoto ? 'Saving…' : 'Save Photo'}
